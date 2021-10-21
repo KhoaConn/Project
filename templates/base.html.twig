@@ -58,7 +58,9 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{ path('category_index') }}">View All</a>
-                                    <a class="dropdown-item" href="{{ path('category_add') }}">New Category</a>
+                                    {% if is_granted("ROLE_MANAGER") %}
+                                         <a class="dropdown-item" href="{{ path('category_add') }}">New Category</a>
+                                    {% endif %}
                                     </div>
                                 </li>
                                 <li class="nav-item ">
